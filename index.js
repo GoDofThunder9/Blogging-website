@@ -12,6 +12,7 @@ const flash = require('connect-flash');
 const expressLayouts = require('express-ejs-layouts');
 const cors = require('cors');
 const customMware = require('./config/middleware');
+const env = require("./config/enviroment.js")
 // setup the chat server to be used with socket.io
 
 
@@ -38,12 +39,12 @@ app.use(cookieparser());
 // set up the view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');    
-app.use(express.static('assets'));
+app.use(express.static(env.assets));
 app.use(express.static('js'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(session({
     name: 'authentication-1',
-    secret:'blahsomething',
+    secret: env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: 

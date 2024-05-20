@@ -5,7 +5,7 @@ header {
     z-index: 3;
     width: 100%;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #377b85, #66A5AD);
+    background: linear-gradient(to left, #377b85, #66A5AD);
 }
 body{
     margin: 0px;
@@ -15,7 +15,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     max-width: 1180px;
-    margin: -23px auto;
+    margin: -15px auto;
     padding: 0 20px;
 }
 
@@ -39,14 +39,15 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #ffc107; /* Change color on hover */
+    color: #ffc107;
+    text-decoration: underline; /* Change color on hover */
 }
 
 main{
     max-width: 800px;
     padding: 0px 20px;
     margin: auto;
-    margin-top: -14px;
+    margin-top: 10px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;

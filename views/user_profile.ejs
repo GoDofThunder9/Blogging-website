@@ -4,7 +4,7 @@
 {%>
     <img  src="<%= user.avatar %>" alt="<%= user.name %>" height="100px" width="100px">
     <h3><%= profile_user.name %></h3>
-    <button onclick="myFunction()">Edit</button>
+    <button onclick="myFunction()">EDIT</button>
     <form id="FORM" action="/update/<%= profile_user.id %>" enctype="multipart/form-data" method="post">
       <input class="input" type="text" name="name" placeholder="your name" value="<%= profile_user.name %>" required>
       <input class="input" type="text" name="email" placeholder="your email" value="<%= profile_user.email %>" required>
@@ -18,23 +18,28 @@
      <% if(Post.uuser._id == user.id)
      {%>
        <%- include('_post'); %>
-       <%- include('_comment'); %>
        <%}
        %>
        <%} %>
      </ul>
  </div>
-   <script src="js/toogle_like.js"></script>
-   <script>
-     $('.toggle-like-button').each(function(){
-       let self = this;
-       let toggleLike = new ToggleLike(self);
-     });
-     </script>
-    <%}
-    else
-    {%>
-      <h1><%= profile_user.email %></h1>
-      <h1><%= profile_user.name %></h1>
+<%}
+ else
+ {%>
+  <img  src="<%= profile_user.avatar %>" alt="<%= user.name %>" height="100px" width="100px">
+  <h3><%= profile_user.name %></h3>
+  <% for( Post of Post)
+  {%>
+    <div id="post-list-container">
+      <ul>
+        <% if(profile_user.id == Post.uuser._id)
+        {%>
+          
+          <%- include('_post'); %>
+          <%}
+          %>
+        </ul>
+      </div>
+      <%} %>
       <%}
       %>

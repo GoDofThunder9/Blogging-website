@@ -1,19 +1,19 @@
-<!-- <div class="post-comment" id="comment-form-<%= Post._id %>">
+<div class="post-comment" id="comment-form-<%= Post._id %>">
   <% if(locals.user){%>
     <form class="comment-input" id="new-comment-form" action="/comment/create"  method="post">
       <input type="text" name="content" placeholder="type here to add comments" required/>
       <input type="hidden" name="Post" value="<%= Post._id %>"/>
       <input type="submit" value="Add Comment" />
     </form>
-<div id="post-comment-list">
+    <i class="fa-regular fa-comment toggle-comment" id="toggle-comment-<%= Post._id %>" data-post-id="<%= Post._id %>" style="margin-left: 4px;"></i><div id="post-comment-list">
     <ul id="post-comment-<%= Post._id%>" class="post-toggle">
       <li id="comment-<% Post._id%>" style="list-style: none;">
         <% for(comment of Post.comments){%>
-          <p><% if (locals.user && locals.user.id == comment.user._id) {%>
-            <a class="delete-post-button" href="/comment/destroy/<%= comment.id %>"><i class="fa-solid fa-rectangle-xmark"></i></a>
-            <%} %> 
+          <p>
             <div class="comment-box">   
-              
+              <% if (locals.user && locals.user.id == comment.user._id) {%>
+                <a class="delete-post-button" href="/comment/destroy/<%= comment.id %>"><i class="fa-solid fa-rectangle-xmark"></i></a>
+                <%} %> 
               <small class="comment-content"><%= comment.content %> </small>
               <small class="comment-name"><%= comment.user.name %>  </small>
             </div>
@@ -31,9 +31,8 @@
                 </small>
                 <%} %>
               </p>
-            </li>
-        
+       </li>
+       </ul>
   </div>
 </div>
-</li>
-<%}%> -->
+<%}%>

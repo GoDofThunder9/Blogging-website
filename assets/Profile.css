@@ -8,8 +8,8 @@ img{
 }
 .profile_image
 {
- transform: scale(3);
  border-radius: 0px;
+ transform: translate(0%, 100%) scale(2);
 }
 h3{
     margin: 10px;
@@ -17,17 +17,28 @@ h3{
     justify-content: center;
     text-align: center;
 }
-button{
+button {
     display: block;
-    margin: auto;
+    margin: 20px auto; /* Add some vertical margin */
     text-align: center;
-    padding: 3px;
-    width: 50px;
-    color: black;
-    background-color: rgb(255, 255, 255);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: medium;
+    padding: 10px 20px; /* Increase padding for better appearance */
+    width: auto; /* Allow the button width to adjust based on content */
+    color: white; /* Change text color */
+    background-color: #4a90e2; /* Use a solid, appealing background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add rounded corners */
+    font-family: 'Open Sans', sans-serif; /* Use a modern font */
+    font-size: 16px; /* Adjust font size for better readability */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
 }
+
+button:hover {
+    background-color: #357ab8; /* Darken background color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
 #FORM
 {
     display: flex;
@@ -42,6 +53,7 @@ button{
     z-index: 2;
     border-radius: 15px;
     box-shadow: 0px 0px 8px 3px black;
+    background: url(img/whats.jpeg);
     color: white;
 }
 .submit{

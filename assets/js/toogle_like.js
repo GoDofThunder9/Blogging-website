@@ -22,8 +22,6 @@ class ToggleLike{
                 }else{
                     likesCount += 1;
                 }
-
-
                 $(self).attr('data-likes', likesCount);
                 $(self).html(`${likesCount} <i class="fa-solid fa-heart" style="color: red";></i>`);
 

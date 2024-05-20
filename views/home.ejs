@@ -25,27 +25,17 @@
     <ul>
       <% for( Post of posts) {%>
         <%- include('_post'); %>
-        <%- include('_comment'); %>
         <%} %>
     </ul>
    </div>
-   <img src="/img/light.jpg" alt="" srcset="" height="500px" width="804px" style="margin-top: 30px;">
-   <script src="js/toogle_like.js"></script>
-   <script>
-    $('.toggle-like-button').each(function(){
-        let self = this;
-        let toggleLike = new ToggleLike(self);
-    });
-  </script>
+   <img src="/img/light.jpg" alt="" srcset="" height="500px" width="804px" style="margin: 50px 0px;">
  <!-- chat box  -->
 <!-- CHANGE :: Creat the code for chat box -->
 <% if (locals.user){ %>
   <%- include('_chatbox'); %>
+  <%- include('_friends.ejs'); %>
 <% } %>
-<%- include('_friends.ejs'); %>
-<header>
   <h2>Contact Us</h2>
-</header>
 <form id="contact-form" action="/submit-contact-form" method="POST">
   <div class="form-group">
       <label for="name">Name</label>
@@ -68,15 +58,6 @@
 <link rel="stylesheet" href="/footer.css">
 <footer class="site-footer">
     <div class="containers">
-        <div class="footer-links">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
         <div class="social-icons">
             <a href="#"><img src="/img/facebook.png" alt="Facebook"></a>
             <a href="#"><img src="/img/twitter.png" alt="Twitter"></a>

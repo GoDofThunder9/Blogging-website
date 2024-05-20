@@ -11,6 +11,10 @@
   text-decoration: none;
   color:#66A5AD;
 }
+#Read-More:hover{
+  text-decoration: none;
+  color:#00899b;
+}
 /* Styling for the post card */
 .post-card {
     width: 300px;
@@ -42,18 +46,6 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 5px;
   }
-  
-  .readMoreBtn {
-    padding: 10px 10px;
-    font-size: 12px;
-    background-color: #66A5AD;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
   .post-user {
     margin-top: 10px;
     color: #666;
@@ -61,10 +53,9 @@
   
   /* Style delete button */
   .delete-post-button {
-    position: absolute;
-    top: -11px;
-    right: -14px;
+    display: flex;
     color: #C4DFE6;
+    flex-flow: row-reverse;
   }
   
   .delete-post-button:hover {

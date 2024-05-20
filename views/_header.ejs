@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js" integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <title><%=title%></title>
 </head>
 <body> 
@@ -21,15 +22,15 @@
     </div>
     <% if(locals.user) {%>
       <div class="nav-links">
-        <li><a href="/profile/<%= locals.user._id %>">Profile</a></li>
+        <li><a href="/profile/<%= locals.user._id %>">PROFILE</a></li>
         <li><a href="#"><%= user.name %></a></li>
-        <li><a href="/sign-out">Sign Out</a></li>
-        <li><a href="/">Home</a></li>
+        <li><a href="/sign-out">SIGN-OUT</a></li>
+        <li><a href="/">HOME</a></li>
         <% }else{ %>
         <div class="nav-links">
-          <li><a href="/sign-in"> Sign In</a></li>
-          <li><a href="/sign-up">Sign Up</a></li>
-          <li><a href="/">Home</a></li>
+          <li><a href="/sign-in"> SIGN-IN</a></li>
+          <li><a href="/sign-up">SIGN-UP</a></li>
+          <li><a href="/">HOME</a></li>
         </div>
         <% } %>
 </nav>

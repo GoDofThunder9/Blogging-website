@@ -2,6 +2,7 @@ const comment = require("../models/comment");
 const mongoose = require("mongoose");
 const Post = require("../models/post");
 const Like = require("../models/like");
+const User = require('../models/user');
 module.exports.create = async function (req, res) {
   try {
     let post = await Post.create({
@@ -50,7 +51,14 @@ module.exports.destroy = async function (req, res) {
     }
 };
 module.exports.pages = async function (req, res) {
-  let post = await Post.findById(req.params.id);
+  let post= await Post.findById(req.params.id)
+  .populate('uuser')
+  .populate({
+      path: 'comments',
+      populate: {
+          path: 'user'
+      }
+  });
    return res.render('pages',
     {
       title : "over",

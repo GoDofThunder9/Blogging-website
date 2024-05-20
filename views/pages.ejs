@@ -1,16 +1,17 @@
 <link rel="stylesheet" href="/page.css">
-<header>
+<div class="Blog-head">
     <h1>My Blog</h1>
-</header>
-<section>
+</div>
     <article class="blog-content">
         <h2>Blog Title</h2>
         <p><%= Post.content %></p>
     </article>
-    <section class="comments-section">
-        <h3>Comments</h3>
-        <div id="comments-container"></div>
-        <textarea id="comment-box" placeholder="Write your comment here..."></textarea>
-        <button id="submit-comment">Submit</button>
-    </section>
-</section>
+    <div id="post-list-container">
+        <ul>
+            <%if(Post)
+            {%>
+                <%- include('_comment'); %>
+            <%}
+            %>
+        </ul>
+   </div>

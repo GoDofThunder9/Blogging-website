@@ -37,7 +37,7 @@ module.exports.create = async function(req, res) {
           message: "comment created",
         });
       }
-            res.redirect("/");
+            res.redirect("back");
     // Redirect back to the homepage or desired route
   } catch (error) {
     // Handle any errors that occur during the process

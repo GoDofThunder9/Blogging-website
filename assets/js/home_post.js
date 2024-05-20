@@ -29,12 +29,12 @@
       return $(
         `
         <li id="post-${post._id}" style="list-style-type: none;" >
-        <p id="post-whole-container" style="margin: 0px;"> 
-          <div class="post-container">
-              <small><a class="delete-post-button" href="/posts/destroy/${post._id}"><i class="fa-solid fa-rectangle-xmark" style="color: black;"></i></a></small>
-              <img src='./img/signin1.jpg' alt="not loaded">
+        <div id="post-whole-container" class="post-card"> 
+        <div class="post-container">
+        <small><a class="delete-post-button" href="/posts/destroy/${post._id}"><i class="fa-solid fa-rectangle-xmark"></i></a></small>
+              <img src="${post.uuser.avatar}" alt="not loaded">
               <div class="post-content" >"${post.content}"</div>
-              <a style="text-decoration: underline;"  class="readMoreBtn"> -Read More..</a>
+              <a id="Read-More" href="/posts/page/${post._id}"> READ-MORE</a>
             </div>
             <small id="like-comment">
                 <a class="toggle-like-button" data-likes="${post.likes.length}" href="/likes/toggle/?id=${post._id}&type=Post"> ${post.likes.length} <i class="fa-solid fa-heart" style="color: red;"></i></a>
@@ -42,16 +42,6 @@
                 </small>
                 <small class="post-user">:-${post.uuser.name}</small>
               </p>
-              <div class="post-comment" id="comment-form-${post._id}">
-    <form class="comment-input" id="new-comment-form" action="/comment/create"  method="post">
-      <input type="text" name="content" placeholder="type here to add comments" required/>
-      <input type="hidden" name="Post" value="${post._id}"/>
-      <input type="submit" value="Add Comment" />
-    </form>
-<div class="post-comment-list">
-    <ul id="post-comment-${post._id}" class="post-toggle">
-    </ul>
-  </div>
   </div>
   </li>
 <script src="js/toogle_like.js"></script>
