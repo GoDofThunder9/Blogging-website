@@ -53,7 +53,7 @@ app.use(session({
     {
         maxAge: (1000*60*100)
     },
-    store: MongoStore.create({ mongoUrl: 'mongodb://13.55.184.136/name' ,autoRemove:'disabled'})
+    store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/name' ,autoRemove:'disabled'})
     
 }));
 app.use(passport.initialize());
