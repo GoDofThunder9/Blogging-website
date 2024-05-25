@@ -21,7 +21,7 @@ const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket.js').chatSockets(chatServer);
 const io = require("socket.io")(chatSockets, {
     cors: {
-      origin: "http://localhost:5000",
+      origin: "http://13.55.184.136:5000",
       methods: ["GET", "POST"]
     }
   });
@@ -53,7 +53,7 @@ app.use(session({
     {
         maxAge: (1000*60*100)
     },
-    store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/name' ,autoRemove:'disabled'})
+    store: MongoStore.create({ mongoUrl: 'mongodb://13.55.184.136/name' ,autoRemove:'disabled'})
     
 }));
 app.use(passport.initialize());
