@@ -14,7 +14,6 @@ const accessLogStream = rfs.createStream('access.log', {
     path: logDirectory
 });
 
-
     const development = {
         name: "development",
         assets: 'assets',

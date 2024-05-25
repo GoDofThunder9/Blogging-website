@@ -21,7 +21,7 @@ const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket.js').chatSockets(chatServer);
 const io = require("socket.io")(chatSockets, {
     cors: {
-      origin: "http://13.55.184.136:5000",
+      origin: "http://3.24.136.48:5000",
       methods: ["GET", "POST"]
     }
   });
