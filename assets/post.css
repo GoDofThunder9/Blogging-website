@@ -1,86 +1,137 @@
-.post-container img
-{
- height: 200px;
- width: 200px ;
- border-radius: 200px;
- margin: auto;
- display: block;
+/* Styling for the whole post card container */
+#post-whole-container {
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f0f8ff; /* Light blue background */
+  width: 400px; /* Fixed width */
+  height: 500px; /* Fixed height */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced appropriately */
+}
 
+/* Hover effect for the post card */
+#post-whole-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-#Read-More{
+
+/* Styling for the post container */
+.post-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px; /* Increased padding */
+  background-color: #ffffff; /* White background */
+  height: 100%; /* Ensure it takes full height */
+}
+
+/* Styling for the delete button */
+.delete-post-button {
+  float: right;
+  color: #ff0000; /* Bright red color */
   text-decoration: none;
-  color:#66A5AD;
+  margin-left: 10px;
 }
-#Read-More:hover{
+
+/* Styling for the avatar image */
+.post-container img {
+  border-radius: 50%;
+  width: 200px; /* Fixed size */
+  height: 200px; /* Fixed size */
+  display: block;
+  margin: auto;
+  object-fit: cover;
+  margin-bottom: 20px; /* Increased margin */
+  transition: transform 0.3s;
+}
+
+/* Hover effect for the avatar image */
+.post-container img:hover {
+  transform: rotate(360deg);
+}
+
+/* Styling for the post content */
+.post-content {
+  font-family: 'Arial, sans-serif';
+  font-size: 20px; /* Increased font size */
+  margin-bottom: 20px; /* Increased margin */
+  color: #333333;
+  text-align: center; /* Centered text */
+}
+
+/* Styling for the read more link */
+#Read-More {
+  color: #1e90ff; /* Bright blue color */
   text-decoration: none;
-  color:#00899b;
+  font-weight: bold;
+  text-align: center; /* Centered text */
 }
-/* Styling for the post card */
-.post-card {
-    width: 300px;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #f9f9f9;
+
+#Read-More:hover {
+  text-decoration: underline;
+}
+
+/* Styling for the like button and likes count */
+#like-post {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the like section */
+  font-family: 'Arial, sans-serif';
+  font-size: 16px; /* Increased font size */
+  color: #555555;
+  margin-bottom: 10px; /* Added margin for spacing */
+}
+
+#like-post a {
+  text-decoration: none;
+  color: #ff4500; /* Bright orange color */
+  display: flex;
+  align-items: center;
+}
+
+#like-post i {
+  margin-left: 5px;
+  transition: color 0.3s;
+}
+
+#like-post a:hover i {
+  color: #ff0000; /* Bright red on hover */
+}
+
+/* Styling for the post user */
+.post-user {
+  font-family: 'Arial, sans-serif';
+  font-size: 16px; /* Increased font size */
+  color: #777777;
+  text-align: center; /* Centered text */
+  margin-top: 20px; /* Increased margin */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  #post-whole-container {
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Auto height on small screens */
   }
-  
-  .post-card:hover {
-    transform: translateY(-5px); /* Move up slightly on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Styling for post content */
+
   .post-container {
-    position: relative;
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+  
+  .post-container img {
+    width: 60px; /* Adjusted size */
+    height: 60px; /* Adjusted size */
   }
   
   .post-content {
-    margin-top: 10px;
-    font-size: 22px;
-    color: #333;
-    height: 50px;
-    margin-left: 10px;
-    overflow: hidden;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 5px;
-  }
-  .post-user {
-    margin-top: 10px;
-    color: #666;
+    font-size: 18px; /* Adjusted font size */
   }
   
-  /* Style delete button */
-  .delete-post-button {
-    display: flex;
-    color: #C4DFE6;
-    flex-flow: row-reverse;
+  #Read-More {
+    font-size: 16px; /* Adjusted font size */
   }
-  
-  .delete-post-button:hover {
-    color:#ff6347;
-  }
-  /* Style like button */
-  .toggle-like-button {
-    color: red;
-    text-decoration: none;
-  }
-  
-  .toggle-like-button:hover {
-    color: #ff6347;
-  }
-  
-  /* Other custom styles */
-  .fa-heart {
-    margin-right: 4px;
-  }
-  
-  .fa-comment {
-    cursor: pointer;
-    color: #666;
-  }
-  
-  .fa-comment:hover {
-    color: #333;
-  }
+}

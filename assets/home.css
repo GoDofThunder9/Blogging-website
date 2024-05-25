@@ -1,140 +1,259 @@
-html{
-  scroll-behavior: smooth;
-}
-.detail
-{   width: 290px;
-    margin-top: 20px ;
-    display: flex;
-    justify-content: end;
-    list-style: none;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.detail li a
-{   
-    padding: 10px;
-    color: aqua;
-}
-.container ul li p 
+#chatImage
 {
-    color: black;
-    font-weight: bold;
-}
-.container ul li small
-{
-   color: darkred;
-   font-size: small;
-}
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: #333;
-    margin: 0px;
-    background-image: url(img/whats.jpeg);
-  }
-  
-  /* Container styles */
-  #feed-posts {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-  }
-  
-  /* Heading styles */
-  #feed-posts h4 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-  
-  /* Form styles */
-  #new-post-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #new-post-form textarea {
-    resize: none;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 15px;
-  }
-  
-  #new-post-form input[type="submit"] {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #66A5AD;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    width: 80px;
-    cursor: pointer;
-  }
-  
-  #new-post-form input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  .navbar-div{
+    width: 50px;
+    height: 50px;
+    display: block;
     position: fixed;
-    top: 0%;
-    left: 0%;
-  }
-   #post-list-container ul{
+    top: 70%;
+    right: 5%;
+}
+#friendIcon
+{
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: fixed;
+    top: 80%;
+    right: 5%;
+}
+html{
+    scroll-behavior: smooth;
+}
+#post-list-container ul li
+{
+  margin: 5px;
+}
+#post-list-container ul
+{
     display: flex;
+    flex-flow: row;
     flex-wrap: wrap;
-  }
-#container-header {
+    margin: 50px;
+}
+.title{
+    text-align: center;
+    padding: 1rem 0;
+}
+.title h2{
+    font-family: var(--Playfair);
+    font-size: 2.4rem;
+}
+.title p{
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+}
+.design{
+    padding: 0rem 0;
+}
+.title{
+    text-align: center;
+    padding: 1rem 0;
+}
+.title h2{
+    font-family: var(--Playfair);
+    font-size: 2.4rem;
+}
+.title p{
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+}
+.design-content{
+    margin: 2rem 0;
+}
+.design-item{
+    cursor: pointer;
+    margin: 1.5rem 0;
+}
+.design-img{
+    position: relative;
+    overflow: hidden;
+}
+.design-img::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+.design-img img{
+    transition:  all 0.5s ease;
+}
+.design-item:hover img{
+    transform: scale(1.2);
+}
+.design-img span:first-of-type{
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+    background: var(--exDark);
+    color: #fff;
+    padding: 0.25rem 1rem;
+}
+.design-img span:last-of-type{
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.design-title{
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+.design-title a{
+    color: var(--dark);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: var(--Playfair);
+}
+.about{
+    padding: 4.5rem 0;
+}
+.about-text{
+    margin: 2rem 0;
+}
+.about-text > p{
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+    opacity: 0.8;
+}
+/* Styling for the feed posts section */
+#feed-posts {
+  background-color: white; /* Match the background of the post cards */
+  padding: 30px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  width: 400px; /* Fixed width for the form */
+  margin: 60px auto; /* Centered with margin */
+}
+
+/* Styling for the form title */
+#feed-posts h4 {
+  font-family: 'Arial, sans-serif';
+  color: #333333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for the form itself */
+#new-post-form {
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Adjust the height as needed */   /* Light gradient background */
-}
-/* Content header */
-.content-header {
-  text-align: center;
-  margin-bottom: 30px;
-  margin-left: 40px;
-  position: relative;
-  z-index: 2;
+  gap: 15px; /* Space between form elements */
 }
 
-.content-header h2 {
-  font-size: 2.5em;
+/* Styling for the textarea inputs */
+#new-post-form textarea {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Arial, sans-serif';
+  font-size: 16px;
+  resize: none; /* Prevent resizing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#new-post-form textarea:focus {
+  border-color: black; /* Bright blue on focus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+/* Styling for the submit button */
+#new-post-form input[type="submit"] {
+  background-color: #ff7f50; /* Bright blue background */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Arial, sans-serif';
+  font-size: 16px;
   font-weight: bold;
-  color: #333; /* Dark text color */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.content-header p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #555555; /* Slightly darker text color */
+#new-post-form input[type="submit"]:hover {
+  background-color: #f14f14; /* Slightly darker blue on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Responsive design */
+@media (max-width: 600px) {
+  #feed-posts {
+    width: 100%; /* Full width on small screens */
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+  
+  #new-post-form textarea, #new-post-form input[type="submit"] {
+    font-size: 14px; /* Adjusted font size */
+    padding: 8px; /* Adjusted padding */
+  }
 }
 
-/* Image header */
-.image-header {
-  position: absolute;
-  z-index: 1;
-  overflow: hidden;
+@media screen and (min-width: 540px){
+    .navbar-nav a{
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
+    }
+    .banner-title{
+        font-size: 5rem;
+    }
+    .banner form{
+        margin-top: 1.4rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-.image-header img {
-  width: 843px;
-  height: auto;
-  margin-top: 0px;
+@media screen and (min-width: 768px){
+    .navbar .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .search-input{
+        padding: 0.8rem 0;
+    }
+    .design-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .design-item{
+        margin: 0;
+    }
+    .blog-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 }
 
-/* Decorative effect for the main text */
-.content-header h2::after {
-  content: '';
-  display: block;
-  width: 80%;
-  height: 3px;
-  background-color: #333; /* Dark line color */
-  margin: 15px auto;
+@media screen and (min-width: 992px){
+    .blog-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .design-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

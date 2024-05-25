@@ -1,26 +1,59 @@
 <link rel="stylesheet" type="text/css" href="/home.css" />
 <link rel="stylesheet" type="text/css" href="/chat.css" />
+<link rel="stylesheet" href="/header.css">
 <link rel="stylesheet" type="text/css" href="/post.css">
-<container id="container-header">
-  <div class="content-header">
-     <p>
-      Hello! Welcome to
-      <h2> LinkLeaf </h2>
-      Bloging is conversation</p>
+<link rel="stylesheet" href="chat.css">
+<header id="nav-header">
+  <nav class = "navbar">
+    <div class = "container">
+      <a href = "index.html" class = "navbar-brand">Link.Leaf</a>
+      <div class = "navbar-nav">
+        <% if(locals.user) {%>
+            <a href="/profile/<%= locals.user._id %>">PROFILE</a>
+            <a href="#"><%= user.name %></a>
+            <a href="/sign-out">SIGN-OUT</a>
+            <a href="/">HOME</a>
+            <% }else{ %>
+            <div class="navbar-nav">
+            <a href="/sign-in"> SIGN-IN</a>
+            <a href="/sign-up">SIGN-UP</a>
+            <a href="/">HOME</a>
+            </div>
+            <% } %>
+      </div>
+    </div>
+  </nav>
+  <div class = "banner">
+    <div class = "container">
+      <h1 class = "banner-title">
+        <span>Link</span> Leaf Blog
+      </h1>
+      <p>everything that you want to know about blogs</p>
+    </div>
   </div>
-  <div class="image-header">
-    <img src="./img/header.jpg" alt="not loaded" srcset="">
-  </div>
-</container >
-<section id="feed-posts">
-    <% if (locals.user){%>
-    <h4>Post</h4>
-    <form action="/posts/create" id="new-post-form" method="post">
-      <textarea name="content" cols="30" rows="3"></textarea>
-      <input type="submit" value="Post"/>
-    </form>
-    <%} %> 
-  </section>
+</header>
+
+
+<% if (locals.user) { %>
+  <section id="feed-posts">
+  <h4>Post</h4>
+  <form action="/posts/create" id="new-post-form" method="post">
+    <textarea name="content" cols="30" rows="3" placeholder="Write your content here..."></textarea>
+    <textarea name="title" cols="30" rows="1" placeholder="Post title..."></textarea>
+    <textarea name="domain" cols="30" rows="1" placeholder="Domain..."></textarea>
+    <input type="submit" value="Post"/>
+  </form>
+</section>
+  <% } %>
+
+  <section class = "design" id = "design">
+    <div class = "container">
+      <div class = "title">
+        <h2>Recent Blogs and Post</h2>
+        <p>recent thoughts</p>
+      </div>
+   </div>
+   </section> 
   <div id="post-list-container">
     <ul>
       <% for( Post of posts) {%>
@@ -28,43 +61,37 @@
         <%} %>
     </ul>
    </div>
-   <img src="/img/light.jpg" alt="" srcset="" height="500px" width="804px" style="margin: 50px 0px;">
- <!-- chat box  -->
-<!-- CHANGE :: Creat the code for chat box -->
-<% if (locals.user){ %>
+   <img id="chatImage" src="/img/paper-plane.png" class="hidden" >
+   <img id="friendIcon" src="/img/friend.png" alt="">
+ <% if (locals.user){ %>
   <%- include('_chatbox'); %>
   <%- include('_friends.ejs'); %>
-<% } %>
-  <h2>Contact Us</h2>
-<form id="contact-form" action="/submit-contact-form" method="POST">
-  <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-  </div>
-  <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-  </div>
-  <div class="form-group">
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" required>
-  </div>
-  <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-  </div>
-  <button type="submit">Submit</button>
-</form>
-<link rel="stylesheet" href="/footer.css">
-<footer class="site-footer">
-    <div class="containers">
-        <div class="social-icons">
-            <a href="#"><img src="/img/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="/img/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="/img/instagram.png" alt="Instagram"></a>
+<% } %> 
+<section class = "about" id = "about">
+  <div class = "container">
+    <div class = "about-content">
+      <div>
+        <img src = "/img/raj1.png" alt = "" height="700px" width="200px">
+      </div>
+      <div class = "about-text">
+        <div class = "title">
+          <h2>Raj Tiwari</h2>
+          <p>Travelling is my passion</p>
         </div>
+        <p>As a traveler, every journey becomes a story, each destination a chapter waiting to be explored. From bustling city streets to serene mountain peaks, I seek the unique essence of every place I visit. I immerse myself in diverse cultures, savor local cuisines, and connect with people whose lives are vastly different from my own</p>
+        <p>Traveling is not just about seeing new places; it's about experiencing them, understanding them, and letting them leave a mark on my soul. With every trip, I grow richer in memories, perspectives, and a deeper appreciation for the beauty and diversity of our world.</p>
+      </div>
     </div>
-    <div class="copyright">
-        <p>&copy; 2024 Your Social Media App. All rights reserved.</p>
-    </div>
+  </div>
+</section>
+<link rel="stylesheet" href="/footer.css">
+<footer>
+  <div class = "social-links">
+    <a href = "#"><i class = "fab fa-facebook-f"></i></a>
+    <a href = "#"><i class = "fab fa-twitter"></i></a>
+    <a href = "#"><i class = "fab fa-instagram"></i></a>
+    <a href = "#"><i class = "fab fa-pinterest"></i></a>
+  </div>
+  <span> Link.Leaf Blog Page</span>
 </footer>
+<script src="/js/paper.js"></script>

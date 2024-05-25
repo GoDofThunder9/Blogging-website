@@ -1,0 +1,21 @@
+<header id="nav-header">
+    <nav class = "navbar">
+      <div class = "container">
+        <a href = "index.html" class = "navbar-brand">Link.Leaf</a>
+        <div class = "navbar-nav">
+          <% if(locals.user) {%>
+              <a href="/profile/<%= locals.user._id %>">PROFILE</a>
+              <a href="#"><%= user.name %></a>
+              <a href="/sign-out">SIGN-OUT</a>
+              <a href="/">HOME</a>
+              <% }else{ %>
+              <div class="navbar-nav">
+              <a href="/sign-in"> SIGN-IN</a>
+              <a href="/sign-up">SIGN-UP</a>
+              <a href="/">HOME</a>
+              </div>
+              <% } %>
+        </div>
+      </div>
+    </nav>
+  </header>

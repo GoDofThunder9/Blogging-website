@@ -1,53 +1,108 @@
 /* General styles */
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f0f4f8;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0px;
+    padding: 0px;
+    background: url("img/nature.jpg") no-repeat fixed;
+    background-size: cover;
+    background-color: #f9f9f9;
     color: #333;
-    margin: 0;
-    padding: 0;
 }
 
-/* Header styling */
-.Blog-head {
-    background-color:white;
-    color: #66A5AD;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-}
+/* Blog header */
 
-.Blog-head h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
-}
-/* Section styling */
-/* Article styling */
+/* Blog content */
 .blog-content {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .blog-content h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: black;
+    margin-top: 0;
+    color: white;
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
 }
 
 .blog-content p {
     font-size: 1.2em;
-    line-height: 1.6;
-    color: #555;
+    line-height: 1.8;
+    color: rgb(255, 255, 255);
+    margin: 20px 0;
 }
 
-/* Post list container styling */
+/* Post list container */
 #post-list-container {
-    margin-top: 20px;
-    padding: 10px 0;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+    list-style-type: none;
 }
 
 #post-list-container ul {
-    list-style: none;
     padding: 0;
+}
+
+#post-list-container ul li {
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 20px;
+    max-height: 166px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    overflow-y: scroll;
+}
+
+#post-list-container ul li:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Comments */
+.comment-container {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.comment-container h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #444;
+    font-family: 'Merriweather', serif;
+}
+
+.comment-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .Blog-head h1 {
+        font-size: 2.5em;
+    }
+
+    .blog-content, #post-list-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .blog-content h2 {
+        font-size: 2em;
+    }
+
+    .blog-content p {
+        font-size: 1.1em;
+    }
+
+    #post-list-container ul li {
+        padding: 15px;
+    }
 }

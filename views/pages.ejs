@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="/page.css">
-<div class="Blog-head">
-    <h1>My Blog</h1>
-</div>
+<link rel="stylesheet" href="/navbar_other.css">
+<link rel="stylesheet" href="/comment.css">
+<%- include('_navbar_other.ejs'); %>
     <article class="blog-content">
-        <h2>Blog Title</h2>
+        <h2><%= Post.title %></h2>
         <p><%= Post.content %></p>
     </article>
     <div id="post-list-container">

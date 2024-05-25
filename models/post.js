@@ -10,6 +10,16 @@ const postSchema = new mongoose.Schema(
              type: String,
              require: true,
         },
+        domain:
+        {
+             type: String,
+             require: true,
+        },
+        title:  
+        {
+            type : String,
+            require: true,
+        },
         uuser:  
         {
             type : mongoose.Schema.Types.ObjectId,

@@ -33,12 +33,11 @@
         <div class="post-container">
         <small><a class="delete-post-button" href="/posts/destroy/${post._id}"><i class="fa-solid fa-rectangle-xmark"></i></a></small>
               <img src="${post.uuser.avatar}" alt="not loaded">
-              <div class="post-content" >"${post.content}"</div>
+              <div class="post-content" >"${post.title}"</div>
               <a id="Read-More" href="/posts/page/${post._id}"> READ-MORE</a>
             </div>
-            <small id="like-comment">
+            <small id="like-post">
                 <a class="toggle-like-button" data-likes="${post.likes.length}" href="/likes/toggle/?id=${post._id}&type=Post"> ${post.likes.length} <i class="fa-solid fa-heart" style="color: red;"></i></a>
-                  <i class="fa-regular fa-comment toggle-comment" id="toggle-comment-${post._id}" data-post-id="${post._id}" style="margin-left: 4px;"></i>
                 </small>
                 <small class="post-user">:-${post.uuser.name}</small>
               </p>

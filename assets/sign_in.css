@@ -1,9 +1,9 @@
 /* Background image styles */
 .background {
     position: fixed;
-    top: 10%;
+    top: 0%;
     left: 0;
-    width: 50%; /* Image takes half of the screen width */
+    width: 100%; /* Image takes half of the screen width */
     height: 100%;
     z-index: -1; /* Place behind content */
 }
@@ -18,7 +18,7 @@
 #sign-in-form {
     position: fixed;
     top: 50%;
-    left: 75%;
+    left: 50%;
     transform: translate(-50%, -50%); /* Center the form horizontally and vertically */
     width: 400px;
     padding: 20px;

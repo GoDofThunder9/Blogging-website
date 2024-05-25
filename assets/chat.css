@@ -3,17 +3,21 @@
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #fff3cd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 11%;
   right: 10px;
   height: 500px;
   overflow-x: hidden;
+  overflow-y: scroll;
   transition: all 0.6s ease;
   z-index: 2;
 }
-
+#user-chat-box.hidden {
+  display: none;
+  transition: width 3s ease;
+}
 #user-chat-box.expanded {
   width: 80%;
   height: 80%;
